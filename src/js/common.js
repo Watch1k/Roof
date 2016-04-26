@@ -80,20 +80,22 @@ head.ready(function(){
 
 	// Counter
 	(function(){
-		$(".timer__in").each(function(index){
-			var counter = $(this);
-			counter.countdown({
-				seconds:counter.data("seconds"),
-				callback:function(days,hours,minutes,seconds,total){
-					days = (days) ? ((days<10)?"0"+days:days)+":" : "00:";
-					hours = (hours) ? ((hours<10)?"0"+hours:hours)+":" : "00:";
-					minutes = (minutes) ? ((minutes<10)?"0"+minutes:minutes)+":" : "00:";
-					seconds = (seconds) ? ((seconds<10)?"0"+seconds:seconds) : "00";
-					counter.html(days+hours+minutes+seconds);
-				},
-				finished: function(){
-					// your code cere
-				}
+		$(window).load(function () {
+			$(".timer__in").each(function(index){
+				var counter = $(this);
+				counter.countdown({
+					seconds:counter.data("seconds"),
+					callback:function(days,hours,minutes,seconds,total){
+						days = (days) ? ((days<10)?"0"+days:days)+":" : "00:";
+						hours = (hours) ? ((hours<10)?"0"+hours:hours)+":" : "00:";
+						minutes = (minutes) ? ((minutes<10)?"0"+minutes:minutes)+":" : "00:";
+						seconds = (seconds) ? ((seconds<10)?"0"+seconds:seconds) : "00";
+						counter.html(days+hours+minutes+seconds);
+					},
+					finished: function(){
+						// your code cere
+					}
+				});
 			});
 		});
 	}());
