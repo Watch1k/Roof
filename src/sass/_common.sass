@@ -1,0 +1,471 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,cyrillic)
+// fonts
+$default-fonts: Arial, sans-serif
+=sans
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 400
+=sans-sb
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 600
+=sans-b
+	font-family: 'Open Sans', $default-fonts
+	font-weight: 700
+
+// colors
+$orange: #fd8a5e
+$blue-l: #00a3ac
+
+/* ==========================================================================
+   Main Styles
+   ========================================================================== */
+a:hover, a:focus
+	text-decoration: none
+a
+	color: inherit
+	text-decoration: none
+svg
+	width: 100%
+	height: 100%
+.is-hidden
+	display: none
+.row
+	+pie-clearfix
+// *
+// 	+selection
+// 		color: #fff
+// 		background-color: $red
+body
+	min-width: 320px
+	+sans-sb
+	font-size: 16px
+	color: $orange
+	line-height: 1.42857
+.wrapper
+	overflow: hidden
+	margin: 0 auto
+	min-height: 100%
+	padding-bottom: 61px
+.wrap
+	margin: 0 auto
+	max-width: 998px
+	transition: all 0.3s
+.row
+	+pie-clearfix
+.icon
+	display: inline-block
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.call
+	padding: 10px 0
+	color: $orange
+	+pie-clearfix
+	&-btn
+		margin-left: 65px
+		padding: 0 11px
+		height: 32px
+		float: right
+		+sans-sb
+		font-size: 14px
+		color: inherit
+		line-height: 28px
+		text-transform: uppercase
+		background-color: transparent
+		border: 2px solid $orange
+		border-radius: 2px
+	.icon
+		position: relative
+		top: -2px
+		margin-right: 6px
+		vertical-align: middle
+	&__phone
+		float: right
+		margin-left: 30px
+	&__number
+		font-size: 20px
+		line-height: 1
+		.color-black
+			color: #434343
+	&__location
+		float: right
+		font-size: 12px
+		color: #383838
+		line-height: 1
+.header
+	&__row
+		margin-top: -28px
+		padding-top: 28px
+		padding-bottom: 32px
+	&__line
+		color: #fff
+		background-color: #5a5a5c
+.nav
+	font-size: 13px
+	line-height: 28px
+	&__link
+		display: inline-block
+		padding: 0 22px 2px
+		&:hover
+			color: $orange
+.logo
+	float: left
+	margin-top: -28px
+	margin-bottom: -32px
+	padding: 0 3px
+	background-color: #fff
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer
+	margin-top: -61px
+	height: 61px
+	font-size: 12px
+	color: #fff
+	line-height: 1.3
+	background-color: #5b595e
+	&__copy
+		float: left
+		margin-top: 25px
+	&__desc
+		margin-top: 7px
+		float: right
+	&__words
+		display: block
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+/*-------- Section Action --------*/
+.action
+	margin-top: -32px
+	padding-top: 100px
+	padding-bottom: 23px
+	color: #fff
+	text-align: center
+	background: url('../img/main-bg.jpg') 0 0 no-repeat
+	background-size: cover
+	&__title
+		margin-left: -90px
+		+sans-b
+		font-size: 50px
+		line-height: 57px
+		text-transform: uppercase
+	&__word
+		display: inline-block
+		margin-right: -0.26em
+		padding: 0 7px
+	&__word_1
+		background-color: #0e8687
+	&__word_2
+		background-color: $blue-l
+	&__word_3
+		position: relative
+		left: -10px
+		padding: 0 12px
+		background-color: #00c4d0
+	&__desc
+		display: inline-block
+		padding: 0 7px
+		font-size: 15px
+		line-height: 22px
+		&_1
+			padding-bottom: 2px
+			margin-top: 50px
+			margin-left: -200px
+			line-height: 20px
+			background-color: #5b5b5d
+		&_2
+			margin-left: 120px
+			font-size: 17px
+			text-transform: uppercase
+			background-color: #ff0105
+.timer
+	float: left
+	padding: 0 10px
+	height: 52px
+	min-width: 200px
+	color: #2b2b2b
+	background-color: #fff
+	&-wrap
+		float: left
+		margin-top: 100px
+	&__action
+		float: left
+		padding: 0 10px
+		height: 52px
+		font-size: 40px
+		line-height: 50px
+		background-color: #ff680d
+	&__desc
+		height: 33px
+		font-size: 24px
+		line-height: 31px
+		background-color: $blue-l
+
+/*--------- Section Price ---------*/
+.price
+	padding-top: 30px
+	padding-bottom: 30px
+	color: #fff
+	line-height: 1.2
+	background-color: $blue-l
+	.wrap
+		padding-left: 100px
+		padding-right: 100px
+	&__title
+		margin-left: 20px
+		+sans
+		font-size: 30px
+		text-transform: uppercase
+	&__subtitle
+		margin-left: 280px
+		font-size: 30px
+		text-transform: uppercase
+	&__desc
+		margin-top: 10px
+		margin-left: 280px
+		font-size: 14px
+		&-title
+			+sans-b
+			font-size: 15px
+/* range Slider Price */
+.range-slider
+	margin-top: 20px
+	&__title
+		margin-bottom: 30px
+		+sans-b
+		font-size: 15px
+	.irs
+		font-size: 15px
+		&-line
+			height: 6px
+			cursor: pointer
+			background-color: #068389
+			border-bottom: 1px solid darken($blue-l,5)
+		&-slider
+			position: relative
+			top: -16px
+			width: 26px
+			height: 26px
+			cursor: pointer
+			background-color: #fec200
+		&-single
+			padding-top: 21px
+			display: inline-block
+			cursor: pointer
+			&:before
+				content: '2'
+				position: absolute
+				z-index: 1
+				top: 22px
+				right: -6px
+				font-size: 9px
+		&-min
+			margin-top: 15px
+		&-max
+			margin-top: 15px
+			&:before
+				content: '2'
+				position: absolute
+				z-index: 1
+				top: 1px
+				right: -6px
+				font-size: 9px
+	&__info
+		margin-top: 20px
+		line-height: 27px
+	&__cost
+		float: left
+		padding-left: 3px
+		padding-right: 10px
+		font-size: 15px
+		background-color: #068389
+		+pie-clearfix
+	&__number
+		margin-right: 5px
+		float: left
+		+sans-b
+		font-size: 21px
+	&__currency
+		position: relative
+		top: 1px
+		float: left
+	&__action
+		float: left
+		position: relative
+		padding: 0 7px
+		font-size: 18px
+		background-color: #fe8661
+.type
+	margin-top: 15px
+	text-align: center
+	&__item
+		display: inline-block
+		margin-right: -4px
+		text-align: left
+		& + &
+			margin-left: 85px
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked
+	position: absolute
+	left: -9999px
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label
+	position: relative
+	padding-left: 32px
+	font-size: 18px
+	line-height: 24px
+	vertical-align: middle
+	cursor: pointer
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before
+	content: ''
+	position: absolute
+	left: 0
+	top: 0
+	width: 20px
+	height: 20px
+	border: 2px solid #fec200
+	border-radius: 100%
+	transition: all 0.2s
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after
+	content: ''
+	position: absolute
+	top: 4px
+	left: 4px
+	width: 16px
+	height: 16px
+	background-color: #fec200
+	border-radius: 100%
+	transition: all .5s
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after
+	opacity: 0
+	transform: scale(0)
+[type="checkbox"]:checked + label:after
+	opacity: 1
+	transform: scale(1)
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before
+	box-shadow: none
+	border-color: #bbb
+	background-color: #ddd
+[type="checkbox"]:disabled:checked + label:after
+	color: #999
+[type="checkbox"]:disabled + label
+	color: #aaa
+/* Form */
+.form-msg
+	margin-top: 60px
+	+pie-clearfix
+	.input
+		float: left
+	&__input
+		float: left
+		margin-right: 5%
+		height: 34px
+		width: 30%
+		+sans
+		color: #ffffff
+		font-size: 16px
+		line-height: 30px
+		background-color: transparent
+		border-bottom: 4px solid #fff
+		+placeholder-color(#fff)
+	&__submit
+		height: 34px
+		width: 30%
+		color: inherit
+		line-height: 30px
+		text-transform: uppercase
+		border: 2px solid #fff
+		background-color: transparent
+		border-radius: 2px
+/*--------------- Section Services ------------*/
+.services
+	padding-top: 10px
+	padding-bottom: 50px
+	&__title
+		+pie-clearfix
+	&__block
+		float: left
+		margin-right: 15px
+		padding-left: 10px
+		padding-right: 10px
+		+sans
+		font-size: 35px
+		color: #fff
+		line-height: 65px
+		text-transform: uppercase
+		background-color: #fe8661
+	&__desc
+		margin-top: 7px
+		font-size: 20px
+		line-height: 1.2
+		& + &
+			margin-top: 0
+.attributes
+	line-height: 1.2
+	text-align: center
+	+pie-clearfix
+	&__item
+		display: inline-block
+		margin-top: 45px
+		margin-right: -4px
+		width: 50%
+		vertical-align: top
+		&_clock
+			.attributes__title
+				color: #ff740c
+			.attributes__desc
+				background-color: #ff740c
+		&_settings
+			.attributes__title
+				color: #06bfdb
+			.attributes__desc
+				background-color: #06bfdb
+		&_star
+			.attributes__title
+				color: #5d5d5f
+			.attributes__desc
+				background-color: #5d5d5f
+		&_pocket
+			.attributes__title
+				color: #febf00
+			.attributes__desc
+				background-color: #febf00
+	&__title
+		+sans-b
+		font-size: 30px
+		text-transform: uppercase
+	&__subtitle
+		margin-top: -3px
+		font-size: 15px
+		color: #000
+	&__desc
+		position: relative
+		display: inline-block
+		margin-top: 10px
+		padding-left: 5px
+		padding-right: 5px
+		padding-bottom: 3px
+		font-size: 15px
+		color: #fff
+		background-color: $orange
+		&_2
+			margin-top: 0
+			position: relative
+			top: -2px
+
+/* ==========================================================================
+   Other Styles
+   ========================================================================== */
+

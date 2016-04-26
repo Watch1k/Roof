@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Template</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="format-detection" content="telephone=no">
+	<!-- theme color for android 5.0 -->
+	<meta name="theme-color" content="#fff">
+	<!-- <meta name="viewport" content="width=1200"> -->
+	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
+	<link rel="stylesheet" media="all" href="css/lib/ion.rangeSlider.css">
+	<!--<link rel="stylesheet" media="all" href="css/lib/ion.rangeSlider.skinHTML5.css">-->
+	<link rel="stylesheet" media="all" href="css/screen.css">
+	<!--[if IE]><script src="js/lib/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<!-- begin wrapper  -->
+<div id="main" class="wrapper">
+	<header class="header">
+		<!--begin call-->
+		<div class="call wrap row">
+			<button class="call-btn"><i class="icon icon-phone"></i>Перезвоните мне</button>
+			<div class="call__phone">
+				<div class="call__number"><span class="color-black">800</span> 123-45-67</div>
+				<div class="call__location">Москва</div>
+			</div>
+			<div class="call__phone">
+				<div class="call__number"><span class="color-black">800</span> 123-45-67</div>
+				<div class="call__location">Москва</div>
+			</div>
+		</div><!--end call-->
+
+		<!--begin header__row-->
+		<div class="header__row">
+			<div class="header__line">
+				<div class="wrap row">
+					<a href="index.html" class="logo"><img class="logo__img" src="img/logo.png" alt="RUMR"></a>
+					<nav class="nav">
+						<a class="nav__link" href="#">Калькулятор</a>
+						<a class="nav__link" href="#">Портфолио</a>
+						<a class="nav__link" href="#">Услуги</a>
+						<a class="nav__link" href="#">Наши клиенты</a>
+						<a class="nav__link" href="#">Контакты</a>
+					</nav>
+				</div>
+			</div>
+		</div><!--end header__row-->
+	</header>
+
+	<!--begin action-->
+	<section class="action">
+		<div class="wrap">
+			<h1 class="action__title"><span class="action__word action__word_1">Монтаж</span> <span class="action__word action__word_2">натяжных</span> <br><span class="action__word action__word_3 row">потолков</span>
+			</h1>
+
+			<div class="row">
+				<div class="action__desc action__desc_1">выполнит для вас компания «RUMR»</div>
+			</div>
+			<div class="row">
+				<div class="action__desc action__desc_2">высокое качество за разумную цену</div>
+			</div>
+
+			<div class="row">
+				<!--begin timer-->
+				<div class="timer-wrap">
+					<div class="row">
+						<div class="timer__action">Акция!</div>
+						<div class="timer">Lorem ipsum dolor sit amet</div>
+					</div>
+					<div class="timer__desc">Гарантия 20 лет на полотно</div>
+				</div><!--end timer-->
+			</div>
+		</div>
+	</section><!--end action-->
+
+	<!--begin price-->
+	<section class="price">
+		<div class="wrap">
+			<div class="price__title">Оставьте заявку и узнаете</div>
+			<div class="price__subtitle">Точную стоимость ремонта</div>
+			<div class="price__desc">
+				<div class="price__desc-title">Что в нем:</div>
+				<ul class="price__desc-list">
+					<li class="price__desc-el">- Грамотное планирование (решение) для вашего дома или квартиры</li>
+					<li class="price__desc-el">- Точноя стоимость работ и материалов</li>
+				</ul>
+			</div>
+
+			<!--begin range-slider-->
+			<div class="range-slider">
+				<div class="range-slider__title">Площадь помещения</div>
+				<input class="range-slider__in" id="rangeSlider">
+				<div class="range-slider__info row">
+					<div class="range-slider__cost"><span class="range-slider__number">12 500</span> <span class="range-slider__currency">руб.</span></div>
+					<div class="range-slider__action">Не забудьте про акцию!!!</div>
+				</div>
+			</div><!--end range-slider-->
+
+			<!--begin type-->
+			<div class="type">
+				<div class="type__item">
+					<input type="checkbox" name="apartment" id="apartment">
+					<label for="apartment" class="type__label">Квартира</label>
+				</div>
+				<div class="type__item">
+					<input type="checkbox" name="house" id="house">
+					<label for="house" class="type__label">Дом</label>
+				</div>
+				<div class="type__item">
+					<input type="checkbox" name="office" id="office">
+					<label for="office" class="type__label">Офис</label>
+				</div>
+				<div class="type__item">
+					<input type="checkbox" name="store" id="store">
+					<label for="store" class="type__label">Магазин</label>
+				</div>
+			</div><!--end type-->
+
+			<!--begin form-msg-->
+			<form action="#" class="form-msg">
+				<input type="text" class="form-msg__input" placeholder="Введите метраж">
+				<input type="text" class="form-msg__input" placeholder="Введите телефон">
+				<button type="submit" class="form-msg__submit">Оставить заявку</button>
+			</form>
+			<!--end form-msg-->
+		</div>
+	</section><!--end price-->
+
+	<!--begin services-->
+	<section class="services wrap">
+		<div class="services__title">
+			<div class="services__block">Услуги</div>
+			<div class="services__desc">от разработки проекта</div>
+			<div class="services__desc">до финальной уборки помещения</div>
+		</div>
+
+		<!--begin attributes-->
+		<div class="attributes">
+			<div class="attributes__item attributes__item_clock">
+				<div class="attributes__icon">
+					<div class="icon icon-clock"></div>
+				</div>
+				<div class="attributes__title">Наш опыт</div>
+				<div class="attributes__subtitle">качественное производства работ</div>
+				<div class="row">
+					<div class="attributes__desc">успешно действуем на рынке</div>
+				</div>
+				<div class="row">
+					<div class="attributes__desc attributes__desc_2">уже долгое время</div>
+				</div>
+			</div>
+			<div class="attributes__item attributes__item_settings">
+				<div class="attributes__icon">
+					<div class="icon icon-settings"></div>
+				</div>
+				<div class="attributes__title">Наши методы</div>
+				<div class="attributes__subtitle">точны и современны</div>
+				<div class="row">
+					<div class="attributes__desc">используем новые материалы</div>
+				</div>
+				<div class="row">
+					<div class="attributes__desc attributes__desc_2">технологии, оборудование</div>
+				</div>
+			</div>
+			<div class="attributes__item attributes__item_star">
+				<div class="attributes__icon">
+					<div class="icon icon-star"></div>
+				</div>
+				<div class="attributes__title">Наши гарантии</div>
+				<div class="attributes__subtitle">«железные»</div>
+				<div class="row">
+					<div class="attributes__desc">предоставляем гарантии</div>
+				</div>
+				<div class="row">
+					<div class="attributes__desc attributes__desc_2">на 20 лет</div>
+				</div>
+			</div>
+			<div class="attributes__item attributes__item_pocket">
+				<div class="attributes__icon">
+					<div class="icon icon-pocket"></div>
+				</div>
+				<div class="attributes__title">Наши цены</div>
+				<div class="attributes__subtitle">обоснованы </div>
+				<div class="row">
+					<div class="attributes__desc">строго соблюдаем</div>
+				</div>
+				<div class="row">
+					<div class="attributes__desc attributes__desc_2">утвержденную смету</div>
+				</div>
+			</div>
+		</div><!--end atrributes-->
+	</section><!--end services-->
+
+	<!--begin notes-->
+	<section class="notes">
+
+	</section><!--end notes-->
+</div><!-- end wrapper -->
+
+<!-- begin footer  -->
+<footer class="footer">
+	<div class="wrap row">
+		<div class="footer__copy">&copy; «ROMR»</div>
+		<div class="footer__desc"><span class="footer__words">Создание дизайна</span> <span class="footer__words">и разработка сайтов</span> <span class="footer__words">от M-disign</span>
+		</div>
+	</div>
+</footer><!-- end footer -->
+<script src="js/lib/head.js" data-headjs-load="js/app.js"></script>
+<script>
+	head.ready(function () {
+		// Placeholder fix for IE
+		$('.lt-ie10 [placeholder]').focus(function() {
+			var i = $(this);
+			if(i.val() == i.attr('placeholder')) {
+				i.val('').removeClass('placeholder');
+				if(i.hasClass('password')) {
+					i.removeClass('password');
+					this.type='password';
+				}
+			}
+		}).blur(function() {
+			var i = $(this);
+			if(i.val() == '' || i.val() == i.attr('placeholder')) {
+				if(this.type=='password') {
+					i.addClass('password');
+					this.type='text';
+				}
+				i.addClass('placeholder').val(i.attr('placeholder'));
+			}
+		}).blur().parents('form').submit(function() {
+			//if($(this).validationEngine('validate')) { // If using validationEngine
+			$(this).find('[placeholder]').each(function() {
+				var i = $(this);
+				if(i.val() == i.attr('placeholder'))
+					i.val('');
+				i.removeClass('placeholder');
+
+			});
+			//}
+		});
+	});
+</script>
+</body>
+</html>
