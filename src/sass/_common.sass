@@ -74,6 +74,8 @@ body
 		background-color: transparent
 		border: 2px solid $orange
 		border-radius: 2px
+		&__text
+			display: inline-block
 	.icon
 		position: relative
 		top: -2px
@@ -97,17 +99,54 @@ body
 		margin-top: -28px
 		padding-top: 28px
 		padding-bottom: 32px
+	&.is-fixed
+		.call
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			z-index: 1000
+			transition: all 0.3s
+			&__phone
+				.color-black
+					color: #fff
+				&_hide
+					display: none
+			&__location
+				display: none
+		.header__row
+			position: fixed
+			top: 0
+			left: 0
+			right: 0
+			margin-top: 0
+			padding-top: 0
+			z-index: 999
+			.header__line
+				box-shadow: 0 0 15.7px 2.3px rgba(0, 0, 0, 0.46)
+			.nav
+				line-height: 48px
+				transition: all 0.3s
+			.logo
+				margin-top: 0
+				transition: all 0.3s
+				&__img
+					width: 66px
+			transition: all 0.3s
 	&__line
 		color: #fff
 		background-color: #5a5a5c
-		border-top: 1px solid #9c9c9d
-		border-bottom: 1px solid #9c9c9d
 .nav
 	font-size: 13px
-	line-height: 28px
+	line-height: 30px
+	cursor: default
+	transition: all 0.3s
 	&__link
+		position: relative
+		z-index: 1
 		display: inline-block
-		padding: 0 22px 2px
+		margin-right: -4px
+		padding: 0 25px 2px
 		&:hover
 			color: $orange
 .logo
@@ -116,6 +155,10 @@ body
 	margin-bottom: -32px
 	padding: 0 3px
 	background-color: #fff
+	transition: all 0.3s
+	&__img
+		width: 112px
+		transition: all 0.3s
 
 /* ==========================================================================
    Footer
@@ -313,21 +356,21 @@ body
 		& + &
 			margin-left: 85px
 /* Base for label styling */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked
+[type="radio"]:not(:checked),
+[type="radio"]:checked
 	position: absolute
 	left: -9999px
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label
 	position: relative
 	padding-left: 32px
 	font-size: 18px
 	line-height: 24px
 	vertical-align: middle
 	cursor: pointer
-/* checkbox aspect */
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before
+/* radio aspect */
+[type="radio"]:not(:checked) + label:before,
+[type="radio"]:checked + label:before
 	content: ''
 	position: absolute
 	left: 0
@@ -338,8 +381,8 @@ body
 	border-radius: 100%
 	transition: all 0.2s
 /* checked mark aspect */
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after
+[type="radio"]:not(:checked) + label:after,
+[type="radio"]:checked + label:after
 	content: ''
 	position: absolute
 	top: 4px
@@ -350,21 +393,21 @@ body
 	border-radius: 100%
 	transition: all .5s
 /* checked mark aspect changes */
-[type="checkbox"]:not(:checked) + label:after
+[type="radio"]:not(:checked) + label:after
 	opacity: 0
 	transform: scale(0)
-[type="checkbox"]:checked + label:after
+[type="radio"]:checked + label:after
 	opacity: 1
 	transform: scale(1)
-/* disabled checkbox */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before
+/* disabled radio */
+[type="radio"]:disabled:not(:checked) + label:before,
+[type="radio"]:disabled:checked + label:before
 	box-shadow: none
 	border-color: #bbb
 	background-color: #ddd
-[type="checkbox"]:disabled:checked + label:after
+[type="radio"]:disabled:checked + label:after
 	color: #999
-[type="checkbox"]:disabled + label
+[type="radio"]:disabled + label
 	color: #aaa
 /* Form */
 .form-msg
@@ -395,10 +438,42 @@ body
 		border-radius: 2px
 /*--------- Section Price ---------*/
 .gallery
-	opacity: 0.15
-	+pie-clearfix
+	overflow: hidden
+	opacity: 0
+	padding-top: 7px
+	padding-bottom: 40px
+	height: 484px
+	transition: all 0.5s
+	&.slick-initialized
+		opacity: 1
+		transition: all 0.5s
 	&__item
-		float: left
+		margin-left: 2px
+		margin-right: 2px
+		cursor: pointer
+		img
+			height: 444px
+	.slick-dots
+		text-align: center
+		li
+			overflow: hidden
+			display: inline-block
+			vertical-align: middle
+			width: 12px
+			height: 12px
+			cursor: pointer
+			border: 1px solid #282828
+			border-radius: 2px
+			font-size: 0
+			text-indent: -9999px
+			transition: background-color 0.3s
+			+ li
+				margin-left: 12px
+			&.slick-active
+				width: 10px
+				height: 10px
+				background-color: #282828
+		transition: background-color 0.3s
 /*--------------- Section Services ------------*/
 .services
 	padding-top: 10px

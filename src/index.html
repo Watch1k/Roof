@@ -32,8 +32,8 @@
 	<header class="header">
 		<!--begin call-->
 		<div class="call wrap row">
-			<button class="call-btn"><i class="icon icon-phone"></i>Перезвоните мне</button>
-			<div class="call__phone">
+			<button class="call-btn"><i class="icon icon-phone"></i><span class="call-btn__text">Перезвоните мне</span></button>
+			<div class="call__phone call__phone_hide">
 				<div class="call__number"><span class="color-black">800</span> 123-45-67</div>
 				<div class="call__location">Москва</div>
 			</div>
@@ -111,22 +111,24 @@
 
 			<!--begin type-->
 			<div class="type">
-				<div class="type__item">
-					<input type="checkbox" name="apartment" id="apartment">
-					<label for="apartment" class="type__label">Квартира</label>
-				</div>
-				<div class="type__item">
-					<input type="checkbox" name="house" id="house">
-					<label for="house" class="type__label">Дом</label>
-				</div>
-				<div class="type__item">
-					<input type="checkbox" name="office" id="office">
-					<label for="office" class="type__label">Офис</label>
-				</div>
-				<div class="type__item">
-					<input type="checkbox" name="store" id="store">
-					<label for="store" class="type__label">Магазин</label>
-				</div>
+				<form action="#" class="type-form">
+					<div class="type__item">
+						<input type="radio" name="type" id="apartment" checked>
+						<label for="apartment" class="type__label">Квартира</label>
+					</div>
+					<div class="type__item">
+						<input type="radio" name="type" id="house">
+						<label for="house" class="type__label">Дом</label>
+					</div>
+					<div class="type__item">
+						<input type="radio" name="type" id="office">
+						<label for="office" class="type__label">Офис</label>
+					</div>
+					<div class="type__item">
+						<input type="radio" name="type" id="store">
+						<label for="store" class="type__label">Магазин</label>
+					</div>
+				</form>
 			</div><!--end type-->
 
 			<!--begin form-msg-->
@@ -145,13 +147,13 @@
 			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
 		</div>
 		<div class="gallery__item">
-			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+			<img src="img/content/face-img.jpg" alt="gallery" class="gallery__img">
 		</div>
 		<div class="gallery__item">
 			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
 		</div>
 		<div class="gallery__item">
-			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+			<img src="img/content/face-img.jpg" alt="gallery" class="gallery__img">
 		</div>
 		<div class="gallery__item">
 			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">

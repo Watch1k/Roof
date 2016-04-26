@@ -23,6 +23,20 @@ head.ready(function(){
 		});
 	}());
 	
+	// gallery Slider
+	(function() {
+		$('.gallery').slick({
+			dots: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 1,
+			centerMode: true,
+			variableWidth: true,
+			arrows: false,
+			focusOnSelect: true
+		});
+	}());
+	
 	// quotes Slider
 	(function() {
 		$('.slider-for').slick({
@@ -42,6 +56,21 @@ head.ready(function(){
 			autoplay: true,
 			autoplaySpeed: 7000,
 			adaptiveHeight: false
+		});
+	}());
+
+	// Window Scroll
+	(function() {
+		$(window).load(function () {
+			var callHeight = $('.call').outerHeight();
+			console.log(callHeight);
+			$(window).scroll(function () {
+				if (jQuery(document).scrollTop() >= callHeight) {
+					$('.header').addClass('is-fixed');
+				} else {
+					$('.header').removeClass('is-fixed');
+				}
+			});
 		});
 	}());
 
