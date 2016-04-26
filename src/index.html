@@ -13,6 +13,18 @@
 	<!--<link rel="stylesheet" media="all" href="css/lib/ion.rangeSlider.skinHTML5.css">-->
 	<link rel="stylesheet" media="all" href="css/screen.css">
 	<!--[if IE]><script src="js/lib/html5shiv.js"></script><![endif]-->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script>
+		function initialize() {
+			var mapProp = {
+				center:new google.maps.LatLng(51.508742,-0.120850),
+				zoom:15,
+				mapTypeId:google.maps.MapTypeId.ROADMAP
+			};
+			var map=new google.maps.Map(document.getElementById("map"),mapProp);
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+	</script>
 </head>
 <body>
 <!-- begin wrapper  -->
@@ -127,6 +139,25 @@
 		</div>
 	</section><!--end price-->
 
+	<!--begin gallery-->
+	<section class="gallery">
+		<div class="gallery__item">
+			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+		</div>
+		<div class="gallery__item">
+			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+		</div>
+		<div class="gallery__item">
+			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+		</div>
+		<div class="gallery__item">
+			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+		</div>
+		<div class="gallery__item">
+			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
+		</div>
+	</section><!--end gallery-->
+
 	<!--begin services-->
 	<section class="services wrap">
 		<div class="services__title">
@@ -194,8 +225,121 @@
 
 	<!--begin notes-->
 	<section class="notes">
-
+		<div class="wrap">
+			<div class="row">
+				<div class="notes__title">Самое главное</div>
+			</div>
+			<div class="row">
+				<div class="notes__subtitle">Мы никогда не изменяем букве договора</div>
+			</div>
+			<div class="row">
+				<div class="notes__desc">Прописанные в нем стоимость, материалы, сроки - это догма</div>
+			</div>
+		</div>
 	</section><!--end notes-->
+
+	<!--begin quotes-->
+	<section class="quotes wrap">
+		<div class="quotes__title">
+			<div class="quotes__block">Наши клиенты</div>
+			<div class="quotes__desc">люди разных доходов, и все они неизменно</div>
+			<div class="quotes__desc">довольны качеством наших услуг!</div>
+		</div>
+
+		<div class="quotes__icon">
+			<div class="icon icon-quote"></div>
+		</div>
+
+		<!--begin slider-for-->
+		<div class="slider-for">
+			<div class="slider-for__item">
+				<div class="slider-for__text">Мы с женой недавно купили квартиру. Мы захотели по всей квартире установить натяжные потолки.</div>
+				<div class="slider-for__text">Зная очень много неудачных примеров друзей, мы решили обратиться к профи.. .</div>
+				<div class="slider-for__text">Специалисты «RUMR» выполнили все на высшем уровне, хотя мы выбрали «эконом-вариант»</div>
+				<div class="slider-for__text">Мы очень рады что наша мечта стала реальностью, всем советую этих мастеров.</div>
+			</div>
+			<div class="slider-for__item">
+				<div class="slider-for__text">Мы с женой недавно купили квартиру. Мы захотели по всей квартире установить натяжные потолки.</div>
+				<div class="slider-for__text">Зная очень много неудачных примеров друзей, мы решили обратиться к профи.. .</div>
+				<div class="slider-for__text">Специалисты «RUMR» выполнили все на высшем уровне, хотя мы выбрали «эконом-вариант»</div>
+			</div>
+			<div class="slider-for__item">
+				<div class="slider-for__text">Мы с женой недавно купили квартиру. Мы захотели по всей квартире установить натяжные потолки.</div>
+				<div class="slider-for__text">Зная очень много неудачных примеров друзей, мы решили обратиться к профи.. .</div>
+			</div>
+			<div class="slider-for__item">
+				<div class="slider-for__text">Мы с женой недавно купили квартиру. Мы захотели по всей квартире установить натяжные потолки.</div>
+			</div>
+		</div><!--end slider-for-->
+
+		<!--begin slider-nav-->
+		<div class="slider-nav">
+			<div class="slider-nav__item">
+				<div class="slider-nav__img">
+					<img src="img/content/face-img.jpg" alt="face">
+				</div>
+				<div class="slider-nav__info">
+					<div class="slider-nav__name">Лариса Глухих</div>
+					<div class="slider-nav__age">34 года</div>
+				</div>
+			</div>
+			<div class="slider-nav__item">
+				<div class="slider-nav__img">
+					<img src="img/content/face-img.jpg" alt="face">
+				</div>
+				<div class="slider-nav__info">
+					<div class="slider-nav__name">Павел Круть</div>
+					<div class="slider-nav__age">34 года</div>
+				</div>
+			</div>
+			<div class="slider-nav__item">
+				<div class="slider-nav__img">
+					<img src="img/content/face-img.jpg" alt="face">
+				</div>
+				<div class="slider-nav__info">
+					<div class="slider-nav__name">Марк Арстанов</div>
+					<div class="slider-nav__age">33 года</div>
+				</div>
+			</div>
+			<div class="slider-nav__item">
+				<div class="slider-nav__img">
+					<img src="img/content/face-img.jpg" alt="face">
+				</div>
+				<div class="slider-nav__info">
+					<div class="slider-nav__name">Персонаж Персонаж</div>
+					<div class="slider-nav__age">31 год</div>
+				</div>
+			</div>
+		</div><!--end slider-nav-->
+	</section><!--end quotes-->
+
+	<!--begin map-->
+	<section class="map">
+		<div class="map__title">Делайте натяжные потолки с «RUMR»</div>
+
+		<!--begin call-->
+		<div class="call wrap row">
+			<button class="call-btn"><i class="icon icon-phone"></i>Перезвоните мне</button>
+			<div class="call__phone">
+				<div class="call__number"><span class="color-black">800</span> 123-45-67</div>
+				<div class="call__location">Москва</div>
+			</div>
+			<div class="call__phone">
+				<div class="call__number"><span class="color-black">800</span> 123-45-67</div>
+				<div class="call__location">Москва</div>
+			</div>
+		</div><!--end call-->
+
+		<!--begin map-->
+		<div id="map"></div><!--end map-->
+
+		<!--begin map__foot-->
+		<div class="map__foot">
+			<button class="red-btn">Заказать потолок за нормальные деньги!</button>
+			<div class="map__foot_desc">Живите в комфорте и радуйтесь каждому дню!</div>
+		</div><!--end map__foot-->
+	</section>
+	<!--end map-->
 </div><!-- end wrapper -->
 
 <!-- begin footer  -->

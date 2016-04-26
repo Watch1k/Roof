@@ -100,6 +100,8 @@ body
 	&__line
 		color: #fff
 		background-color: #5a5a5c
+		border-top: 1px solid #9c9c9d
+		border-bottom: 1px solid #9c9c9d
 .nav
 	font-size: 13px
 	line-height: 28px
@@ -125,6 +127,8 @@ body
 	color: #fff
 	line-height: 1.3
 	background-color: #5b595e
+	border-top: 1px solid #d3d3d2
+	border-bottom: 1px solid #7c7a7e
 	&__copy
 		float: left
 		margin-top: 25px
@@ -389,6 +393,12 @@ body
 		border: 2px solid #fff
 		background-color: transparent
 		border-radius: 2px
+/*--------- Section Price ---------*/
+.gallery
+	opacity: 0.15
+	+pie-clearfix
+	&__item
+		float: left
 /*--------------- Section Services ------------*/
 .services
 	padding-top: 10px
@@ -413,6 +423,8 @@ body
 		& + &
 			margin-top: 0
 .attributes
+	padding-left: 50px
+	padding-right: 50px
 	line-height: 1.2
 	text-align: center
 	+pie-clearfix
@@ -464,7 +476,152 @@ body
 			margin-top: 0
 			position: relative
 			top: -2px
-
+/*--------------- Section Notes ------------*/
+.notes
+	font-size: 18px
+	color: #ffffff
+	border-top: 3px solid #f8845b
+	background-color: #00af9b
+	.wrap
+		padding-top: 50px
+		padding-bottom: 50px
+		background: url('../img/notes-bg.png') 100px center no-repeat
+	&__title, &__subtitle
+		display: inline-block
+		padding-left: 10px
+		padding-right: 10px
+		+sans-b
+		font-size: 28px
+		line-height: 43px
+		text-transform: uppercase
+	&__title
+		margin-left: 250px
+		background-color: #fe5f1d
+	&__subtitle
+		margin-left: 190px
+		background-color: #f68654
+	&__desc
+		margin-top: 15px
+		margin-left: 330px
+/*--------------- Section Quotes ------------*/
+.quotes
+	padding-top: 25px
+	padding-bottom: 25px
+	&__title
+		+pie-clearfix
+	&__block
+		float: left
+		margin-right: 15px
+		padding-left: 10px
+		padding-right: 10px
+		+sans
+		font-size: 35px
+		color: #fff
+		line-height: 65px
+		text-transform: uppercase
+		background-color: #fe8661
+	&__desc
+		margin-top: 7px
+		font-size: 20px
+		line-height: 1.2
+		& + &
+			margin-top: 0
+	&__icon
+		margin-top: 25px
+		text-align: center
+.slider-nav
+	&__item
+		margin-top: 12px
+		cursor: pointer
+		min-height: 84px
+		opacity: 0.8
+		transition: all 0.5s
+	.slick-list
+		padding: 0 !important
+		margin-left: 100px
+	&__img
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		overflow: hidden
+		margin-right: 12px
+		width: 60px
+		height: 60px
+		border-radius: 100%
+		transition: all 0.5s
+		img
+			width: 100%
+			height: auto
+	&__info
+		display: inline-block
+		vertical-align: middle
+		font-size: 11px
+		color: #2f2f2f
+		line-height: 17px
+	.slick-active
+		.slider-nav__img
+			margin-left: 50px
+	.slick-current
+		margin-top: 0
+		text-align: center
+		opacity: 1
+		transition: all 0.5s
+		.slider-nav__img
+			margin-left: 0
+			width: 84px
+			height: 84px
+			transition: all 0.5s
+		.slider-nav__info
+			font-size: 16px
+			color: #fe8661
+			text-align: left
+			line-height: 24px
+.slider-for
+	margin-top: 25px
+	margin-bottom: 30px
+	&__item
+		font-size: 15px
+		color: #676767
+		line-height: 1.2
+		text-align: center
+/*--------------- Section Quotes ------------*/
+.map
+	&__title
+		font-size: 40px
+		color: #fff
+		line-height: 88px
+		text-align: center
+		text-transform: uppercase
+		background-color: #fe8661
+	.call
+		padding-top: 20px
+		padding-bottom: 20px
+	&__foot
+		padding-top: 30px
+		padding-bottom: 25px
+		text-align: center
+		background-color: #eeedeb
+		&_desc
+			margin-top: 15px
+			font-size: 14px
+			color: #313131
+			line-height: 24px
+			text-transform: uppercase
+.red-btn
+	display: inline-block
+	+sans-sb
+	padding-left: 7px
+	padding-right: 7px
+	font-size: 16px
+	color: #ff0105
+	line-height: 25px
+	text-transform: uppercase
+	border: 1px solid #ff0105
+	background-color: #fff
+	border-radius: 2px
+#map
+	width: 100%
+	height: 50vh
 /* ==========================================================================
    Other Styles
    ========================================================================== */
