@@ -85,6 +85,7 @@ body
 		float: right
 		margin-left: 30px
 	&__number
+		display: block
 		font-size: 20px
 		line-height: 1
 		.color-black
@@ -96,17 +97,37 @@ body
 		line-height: 1
 .header
 	&__row
+		position: fixed
+		z-index: 999
+		top: 52px
+		left: 0
+		right: 0
 		margin-top: -28px
 		padding-top: 28px
 		padding-bottom: 32px
+		transition: 0.2s
 	&.is-fixed
+		+ .action
+			margin-top: 81px
 		.call
 			position: fixed
 			top: 0
 			left: 0
 			right: 0
+			height: 0
+			padding: 0
 			z-index: 1000
-			transition: all 0.3s
+			transition: all 0.2s
+			&-btn
+				margin-top: 8px
+				margin-left: 15px
+				padding: 0 6px
+				background-color: #fff
+				transition: background-color 0.5s, margin-left 0.5s
+				.icon
+					margin-right: 0
+				&__text
+					display: none
 			&__phone
 				.color-black
 					color: #fff
@@ -114,25 +135,23 @@ body
 					display: none
 			&__location
 				display: none
+			&__number
+				margin-top: 14px
 		.header__row
-			position: fixed
 			top: 0
-			left: 0
-			right: 0
 			margin-top: 0
 			padding-top: 0
-			z-index: 999
 			.header__line
 				box-shadow: 0 0 15.7px 2.3px rgba(0, 0, 0, 0.46)
 			.nav
 				line-height: 48px
-				transition: all 0.3s
+				transition: all 0.2s
 			.logo
 				margin-top: 0
-				transition: all 0.3s
+				transition: all 0.2s
 				&__img
 					width: 66px
-			transition: all 0.3s
+					transition: all 0.2s
 	&__line
 		color: #fff
 		background-color: #5a5a5c
@@ -140,7 +159,7 @@ body
 	font-size: 13px
 	line-height: 30px
 	cursor: default
-	transition: all 0.3s
+	transition: all 0.2s
 	&__link
 		position: relative
 		z-index: 1
@@ -155,10 +174,10 @@ body
 	margin-bottom: -32px
 	padding: 0 3px
 	background-color: #fff
-	transition: all 0.3s
+	transition: all 0.2s
 	&__img
 		width: 112px
-		transition: all 0.3s
+		transition: all 0.2s
 
 /* ==========================================================================
    Footer
@@ -187,7 +206,7 @@ body
 
 /*-------- Section Action --------*/
 .action
-	margin-top: -32px
+	margin-top: 32px
 	padding-top: 100px
 	padding-bottom: 23px
 	color: #fff
@@ -231,7 +250,7 @@ body
 			background-color: #ff0105
 .timer
 	float: left
-	padding: 0 10px
+	padding: 0 7px 0 5px
 	height: 52px
 	min-width: 200px
 	color: #2b2b2b
@@ -239,6 +258,24 @@ body
 	&-wrap
 		float: left
 		margin-top: 100px
+	&__in
+		font-size: 36px
+		line-height: 1
+	&__out
+		+pie-clearfix
+	&__date
+		position: relative
+		float: left
+		font-size: 12px
+		text-transform: uppercase
+		&_days
+			margin-left: 5px
+		&_hours
+			margin-left: 12px
+		&_minutes
+			margin-left: 9px
+		&_seconds
+			margin-left: 6px
 	&__action
 		float: left
 		padding: 0 10px
@@ -448,12 +485,58 @@ body
 		opacity: 1
 		transition: all 0.5s
 	&__item
+		position: relative
 		margin-left: 2px
 		margin-right: 2px
 		cursor: pointer
 		img
 			height: 444px
-	.slick-dots
+		&:hover
+			.gallery__title
+				opacity: 1
+				right: 0
+				transition: all 0.3s
+			.gallery__desc
+				opacity: 1
+				right: -40%
+				transition: all 0.3s
+	&__title
+		position: absolute
+		z-index: 1
+		top: 0
+		right: 50px
+		padding-left: 10px
+		padding-right: 25px
+		+sans
+		font-size: 35px
+		color: #fff
+		line-height: 65px
+		text-transform: uppercase
+		background-color: #fe8661
+		opacity: 0
+		transition: all 0.3s
+	&__desc
+		position: absolute
+		z-index: 1
+		top: 65px
+		right: -20%
+		font-size: 15px
+		color: #fff
+		line-height: 18px
+		opacity: 0
+		transition: all 0.3s
+		+pie-clearfix
+	&__text
+		float: left
+		padding: 0 5px 2px
+		background-color: #5b5b5d
+	&__more
+		float: left
+		padding: 0 5px 2px
+		color: #5b5b5b
+		background-color: #fff
+	.slick-
+		margin-top: 5px
 		text-align: center
 		li
 			overflow: hidden
