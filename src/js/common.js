@@ -66,7 +66,17 @@ head.ready(function(){
 			autoplay: true,
 			autoplaySpeed: 7000,
 			adaptiveHeight: false
-		});
+		})
+			.on("mousewheel", function (event) {
+				event.preventDefault();
+				console.log(event.deltaX);
+				console.log(event.deltaY);
+				if (event.deltaX > 0 || event.deltaY < 0) {
+					$('.slider-nav').slick('slickNext');
+				} else if (event.deltaX < 0 || event.deltaY > 0) {
+					$('.slider-nav').slick('slickPrev');
+				}
+			});
 	}());
 
 	// Window Scroll

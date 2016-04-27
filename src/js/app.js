@@ -3,6 +3,7 @@ head.load(
 	"js/lib/slick.min.js",
 	// "js/lib/wow.min.js",
 	"js/lib/jquery.countdown.js",
+	"js/lib/jquery.mousewheel.min.js",
 	"js/lib/ion.rangeSlider.min.js",
 	"js/common.js"
 );
