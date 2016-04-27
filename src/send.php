@@ -1,6 +1,6 @@
 <?php
 if ($_POST) {
-        $to_email = "host.sf@gmail.com"; //Recipient email, Replace with own email here
+        $to_email = "youremail@gmail.com"; //Recipient email, Replace with own email here
         
         //check if its an ajax request, exit if not
         if(!isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) != 'xmlhttprequest') {
@@ -24,7 +24,7 @@ if ($_POST) {
         
         //proceed with PHP email.
         $headers = 'From: '.$mail_square.'' . "\r\n" .
-        'Reply-To: '.$mail_phone.'' . "\r\n" .;
+        'Reply-To: '.$mail_phone.'' . "\r\n";
         
         $send_mail = mail($to_email, $subject, $message_body, $headers);
         

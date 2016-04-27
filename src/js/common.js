@@ -18,7 +18,6 @@ head.ready(function(){
 		$('.type input[type="radio"]').on('change', function () {
 			$('.type input[type="radio"]').each(function () {
 				if ($(this).is(':checked')) {
-					console.log('checked');
 					var ratioIndex = $(this).parent('.type__item').index();
 					ratio = ratioValue[ratioIndex];
 				}
@@ -97,8 +96,6 @@ head.ready(function(){
 		})
 			.on("mousewheel", function (event) {
 				event.preventDefault();
-				console.log(event.deltaX);
-				console.log(event.deltaY);
 				if (event.deltaX > 0 || event.deltaY < 0) {
 					$('.slider-nav').slick('slickNext');
 				} else if (event.deltaX < 0 || event.deltaY > 0) {
@@ -174,18 +171,21 @@ head.ready(function(){
 
 	// Ajax Form
 	(function () {
-		$('#formMail').submit(function () {
+		$('#formMail').submit(function (e) {
+			e.preventDefault();
 			var post_data = $('#formMail').serialize();
-			console.log(post_data);
 
 			//Ajax post data to server
 			$.post('send.php', post_data, function(response){
 				if (response.type == 'error'){
 					// your code here
-					console.log('error');
 				} else {
 					// your code here
-					console.log('post start');
+					$('.form-msg__help').slideDown();
+					setTimeout(function () {
+						$('.form-msg__help').slideUp();
+						$('#formMail').trigger('reset');
+					},5000);
 				}
 			}, 'json');
 		});

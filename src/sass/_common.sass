@@ -61,6 +61,8 @@ body
    Header
    ========================================================================== */
 .call
+	position: relative
+	z-index: 1001
 	padding: 10px 0
 	color: $orange
 	+pie-clearfix
@@ -643,10 +645,19 @@ body
 	color: #aaa
 /* Form */
 .form-msg
+	position: relative
 	margin-top: 60px
 	+pie-clearfix
 	+r(767)
 		margin-top: 0
+	&__help
+		display: none
+		padding-top: 20px
+		text-align: right
+		font-size: 16px
+		color: #fff
+		+r(639)
+			text-align: center
 	&__input
 		float: left
 		margin-right: 5%
