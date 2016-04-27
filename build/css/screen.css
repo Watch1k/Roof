@@ -101,7 +101,7 @@ body { min-width: 320px; font-family: "Open Sans", Arial, sans-serif; font-weigh
 .call__location { float: right; font-size: 12px; color: #383838; line-height: 1; }
 
 .header__row { position: fixed; z-index: 999; top: 52px; left: 0; right: 0; margin-top: -28px; padding-top: 28px; padding-bottom: 32px; -webkit-transition: 0.2s; -moz-transition: 0.2s; -o-transition: 0.2s; transition: 0.2s; }
-@media only screen and (min-width: 820px) { .header.is-fixed + .action { margin-top: 81px; }
+@media only screen and (min-width: 820px) { .header.is-fixed + .action { margin-top: 52px; }
   .header.is-fixed .call { position: fixed; top: 0; left: 0; right: 0; height: 0; padding: 0; z-index: 1000; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; -o-transition: all 0.2s; transition: all 0.2s; }
   .header.is-fixed .call-btn { margin-top: 8px; margin-left: 15px; padding: 0 6px; background-color: #fff; -webkit-transition: background-color 0.5s, margin-left 0.5s; -moz-transition: background-color 0.5s, margin-left 0.5s; -o-transition: background-color 0.5s, margin-left 0.5s; transition: background-color 0.5s, margin-left 0.5s; } }
 @media only screen and (min-width: 820px) and (max-width: 819px) { .header.is-fixed .call-btn { display: none; } }
