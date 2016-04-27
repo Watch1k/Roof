@@ -166,6 +166,16 @@ head.ready(function(){
 		});
 	}());
 
+	// call Scroll
+	(function () {
+		$('.map__foot .red-btn').on('click', function (e) {
+			e.preventDefault();
+			var elScroll = $('#calc').offset().top,
+					elOffset = $('.header__row').height();
+			$('html, body').animate({ scrollTop: elScroll - elOffset }, 'slow');
+		});
+	}());
+
 	// menu Toggle
 	(function () {
 		$('#menu_toggle').on('click', function () {
