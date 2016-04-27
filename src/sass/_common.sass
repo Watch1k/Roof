@@ -1066,6 +1066,7 @@ body
 		background-color: #fe8661
 	.call
 		position: relative
+		z-index: 1
 		padding-top: 20px
 		padding-bottom: 20px
 		+r(639)
@@ -1122,4 +1123,81 @@ body
 /* ==========================================================================
    Other Styles
    ========================================================================== */
-
+.text-center
+	text-align: center
+/*---------- Popup Call ----------*/
+.popup
+	display: none
+	position: fixed
+	background-color: rgba(0,0,0,.5)
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	z-index: 998
+	&__close
+		position: absolute
+		top: 0
+		right: 0
+		width: 40px
+		font-size: 40px
+		color: #fff
+		line-height: 1
+		text-align: center
+		cursor: pointer
+		transform: rotate(-45deg)
+		transition: all 0.2s
+		&:hover
+			color: $orange
+			transition: all 0.2s
+	&__in
+		position: absolute
+		width: 90%
+		max-width: 500px
+		top: 50%
+		left: 50%
+		padding: 40px 10px 30px
+		background-color: #00a3ac
+		border-radius: 5px
+		box-shadow: 0 0 10px rgba(0,0,0,.5)
+		transform: translate(-50%, -50%)
+	&__input
+		float: left
+		margin-left: 6%
+		width: 41%
+		height: 34px
+		+sans
+		color: #ffffff
+		font-size: 16px
+		line-height: 30px
+		background-color: transparent
+		border-bottom: 4px solid #fff
+		+placeholder-color(#fff)
+		+r(479)
+			margin-left: 0
+			margin-left: 5%
+			margin-right: 5%
+			width: 90%
+		& + &
+			+r(479)
+				margin-top: 10px
+	&__submit
+		margin-top: 25px
+		display: inline-block
+		padding-left: 15px
+		padding-right: 15px
+		height: 34px
+		color: #fff
+		line-height: 30px
+		text-transform: uppercase
+		border: 2px solid #fff
+		background-color: transparent
+		border-radius: 2px
+		+r(479)
+			width: 90%
+	&__help
+		display: none
+		padding-top: 20px
+		text-align: center
+		font-size: 16px
+		color: #fff

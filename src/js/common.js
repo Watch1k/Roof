@@ -194,7 +194,40 @@ head.ready(function(){
 				}
 			}, 'json');
 		});
+	}());
 
+	// popup Close
+	(function () {
+		$('.call-btn').on('click', function () {
+			$('.popup_call').fadeIn();
+		});
+
+		$('.popup__close').on('click', function () {
+			console.log('click');
+			$(this).closest('.popup').fadeOut();
+		});
+	}());
+
+	// Ajax Form
+	(function () {
+		$('#formCall').submit(function (e) {
+			e.preventDefault();
+			var post_data = $('#formCall').serialize();
+
+			//Ajax post data to server
+			$.post('call.php', post_data, function(response){
+				if (response.type == 'error'){
+					// your code here
+				} else {
+					// your code here
+					$('.popup__help').slideDown();
+					setTimeout(function () {
+						$('.popup__help').slideUp();
+						$('#formCall').trigger('reset');
+					},5000);
+				}
+			}, 'json');
+		});
 	}());
 
 });
