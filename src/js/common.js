@@ -15,7 +15,7 @@ head.ready(function(){
 	(function() {
 		var ratio = 1,
 				ratioValue = [1, 10, 100, 1000];
-		$('.type input').on('change', function () {
+		$('.type input[type="radio"]').on('change', function () {
 			$('.type input[type="radio"]').each(function () {
 				if ($(this).is(':checked')) {
 					console.log('checked');
@@ -130,9 +130,13 @@ head.ready(function(){
 	(function(){
 		$(window).load(function () {
 			$(".timer__in").each(function(index){
-				var counter = $(this);
+				var counter = $(this),
+						// counterValue = counter.data('seconds'); // old counter
+						counterNow = new Date(),
+						counterDate = new Date(2016,4 - 1,28,18,50), // год, месяц (-1 маст хев), день, минута, секунда
+						counterValue = Math.round((counterDate - counterNow) / 1000);
 				counter.countdown({
-					seconds:counter.data("seconds"),
+					seconds: counterValue,
 					callback:function(days,hours,minutes,seconds,total){
 						days = (days) ? ((days<10)?"0"+days:days)+":" : "00:";
 						hours = (hours) ? ((hours<10)?"0"+hours:hours)+":" : "00:";
@@ -141,7 +145,7 @@ head.ready(function(){
 						counter.html(days+hours+minutes+seconds);
 					},
 					finished: function(){
-						// your code cere
+						// your code here
 					}
 				});
 			});
@@ -166,6 +170,26 @@ head.ready(function(){
 			$(this).toggleClass('is-active');
 			$('.nav').toggleClass('is-active');
 		});
+	}());
+
+	// Ajax Form
+	(function () {
+		$('#formMail').submit(function () {
+			var post_data = $('#formMail').serialize();
+			console.log(post_data);
+
+			//Ajax post data to server
+			$.post('send.php', post_data, function(response){
+				if (response.type == 'error'){
+					// your code here
+					console.log('error');
+				} else {
+					// your code here
+					console.log('post start');
+				}
+			}, 'json');
+		});
+
 	}());
 
 });
