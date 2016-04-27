@@ -11,24 +11,29 @@ head.ready(function(){
 		});
 	}());
 
+	var savedResult = 12500; // стартовая цена
 	// range slider
 	(function() {
-		var ratio = 1,
-				ratioValue = [1, 10, 100, 1000];
+		var ratio = 1, // начальный коф должен совпадать с первым кофом массива
+				ratioValue = [1, 10, 100, 1000]; // кофы
 		$('.type input[type="radio"]').on('change', function () {
 			$('.type input[type="radio"]').each(function () {
 				if ($(this).is(':checked')) {
 					var ratioIndex = $(this).parent('.type__item').index();
 					ratio = ratioValue[ratioIndex];
+					$('.range-slider__number').text(savedResult * ratio);
 				}
 			});
 		});
 		$("#rangeSlider").ionRangeSlider({
 			min: 0,
 			max: 1000,
-			from: 35,
+			from: 35, // старт ползунка при загрузке окна
 			onChange: function (data) {
-				$('.range-slider__number').text(Math.floor(data.from * ratio));
+				$('.range-slider__number').text(Math.floor(data.from * ratio)); // выводим значение по формуле
+			},
+			onFinish: function (data) {
+				savedResult = data.from;
 			}
 		});
 	}());
