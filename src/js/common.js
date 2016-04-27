@@ -46,7 +46,24 @@ head.ready(function(){
 			]
 		});
 	}());
-	
+
+	// height Slick Slider
+	function resizeGallery() {
+		if ($(window).width() < 768) {
+			var galleryHeight = $('.gallery__item').eq(0).outerHeight();
+			$('.gallery__item').each(function () {
+				if ($(this).outerHeight() < galleryHeight) {
+					galleryHeight = $(this).outerHeight();
+				}
+			});
+			$('.gallery .slick-track').css('height', galleryHeight);
+			return;
+		}
+		$('.gallery .slick-track').css('height', 'auto');
+	};
+
+	resizeGallery();
+
 	// quotes Slider
 	(function() {
 		$('.slider-for').slick({
