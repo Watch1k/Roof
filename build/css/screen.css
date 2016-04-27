@@ -288,11 +288,11 @@ body { min-width: 320px; font-family: "Open Sans", Arial, sans-serif; font-weigh
 .gallery__item img { height: 444px; }
 @media only screen and (max-width: 767px) { .gallery__item img { width: 100%; height: auto; } }
 .gallery__item:hover .gallery__title { opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; right: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
-.gallery__item:hover .gallery__desc { opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; right: -40%; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+.gallery__item:hover .gallery__desc { opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; right: 0; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
 @media only screen and (max-width: 1023px) { .gallery__item:hover .gallery__desc { right: 0; } }
 .gallery__title { position: absolute; z-index: 10; top: 0; right: 50px; padding-left: 10px; padding-right: 25px; font-family: "Open Sans", Arial, sans-serif; font-weight: 400; font-size: 35px; color: #fff; line-height: 65px; text-transform: uppercase; background-color: #fe8661; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
 @media only screen and (max-width: 767px) { .gallery__title { opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; left: 0; right: auto; } }
-.gallery__desc { position: absolute; z-index: 20; top: 65px; right: -20%; font-size: 15px; color: #fff; line-height: 18px; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
+.gallery__desc { position: absolute; z-index: 20; top: 65px; right: 50px; font-size: 15px; color: #fff; line-height: 18px; opacity: 0; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; -o-transition: all 0.3s; transition: all 0.3s; }
 @media only screen and (max-width: 767px) { .gallery__desc { opacity: 1; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"; left: 20px; right: auto; font-size: 13px; } }
 .gallery__desc:before, .gallery__desc:after { content: ""; display: table; }
 .gallery__desc:after { clear: both; }
