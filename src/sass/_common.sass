@@ -719,10 +719,12 @@ body
 				opacity: 1
 				right: 0
 				transition: all 0.3s
+				+r(767)
+					right: auto
 			.gallery__desc
 				opacity: 1
 				right: 0
-				transition: all 0.3s
+				transition: all 0.7s
 				+r(1023)
 					right: 0
 	&__title
@@ -746,14 +748,14 @@ body
 			right: auto
 	&__desc
 		position: absolute
-		z-index: 20
+		z-index: 20auto
 		top: 65px
 		right: 50px
 		font-size: 15px
 		color: #fff
 		line-height: 18px
 		opacity: 0
-		transition: all 0.3s
+		transition: all 0.7s
 		+r(767)
 			opacity: 1
 			left: 20px
