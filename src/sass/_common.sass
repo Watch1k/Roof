@@ -49,6 +49,9 @@ body
 	margin: 0 auto
 	max-width: 998px
 	transition: all 0.3s
+	+r(1023)
+		padding-left: 20px
+		padding-right: 20px
 .row
 	+pie-clearfix
 .icon
@@ -84,6 +87,9 @@ body
 	&__phone
 		float: right
 		margin-left: 30px
+		&_hide
+			+r(819)
+				display: none
 	&__number
 		display: block
 		font-size: 20px
@@ -106,60 +112,109 @@ body
 		padding-top: 28px
 		padding-bottom: 32px
 		transition: 0.2s
-	&.is-fixed
-		+ .action
-			margin-top: 81px
-		.call
+	@media only screen and (min-width: 820px)
+		&.is-fixed
+			+ .action
+				margin-top: 81px
+			.call
+				position: fixed
+				top: 0
+				left: 0
+				right: 0
+				height: 0
+				padding: 0
+				z-index: 1000
+				transition: all 0.2s
+				&-btn
+					margin-top: 8px
+					margin-left: 15px
+					padding: 0 6px
+					background-color: #fff
+					transition: background-color 0.5s, margin-left 0.5s
+					+r(819)
+						display: none
+					.icon
+						margin-right: 0
+					&__text
+						display: none
+				&__phone
+					+r(819)
+						margin-right: 60px
+					.color-black
+						color: #fff
+					&_hide
+						display: none
+				&__location
+					display: none
+				&__number
+					margin-top: 14px
+			.header__row
+				top: 0
+				margin-top: 0
+				padding-top: 0
+				.header__line
+					box-shadow: 0 0 15.7px 2.3px rgba(0, 0, 0, 0.46)
+				.nav
+					line-height: 48px
+					transition: all 0.2s
+				.logo
+					margin-top: 0
+					transition: all 0.2s
+					&__img
+						width: 66px
+						transition: all 0.2s
+						+r(819)
+							padding-top: 3px
+							width: 46px
+							background-color: #fff
+	&__line
+		color: #fff
+		background-color: #5a5a5c
+	+r(819)
+		.header__line
 			position: fixed
 			top: 0
 			left: 0
 			right: 0
-			height: 0
-			padding: 0
-			z-index: 1000
-			transition: all 0.2s
+			box-shadow: 0 0 15.7px 2.3px rgba(0, 0, 0, 0.46)
+		.call
+			padding-top: 7px
+			padding-bottom: 0
 			&-btn
-				margin-top: 8px
-				margin-left: 15px
-				padding: 0 6px
-				background-color: #fff
-				transition: background-color 0.5s, margin-left 0.5s
-				.icon
-					margin-right: 0
-				&__text
-					display: none
+				display: none
 			&__phone
+				position: fixed
+				right: 60px
+				z-index: 1001
 				.color-black
 					color: #fff
-				&_hide
-					display: none
 			&__location
-				display: none
-			&__number
-				margin-top: 14px
-		.header__row
-			top: 0
+				position: relative
+				z-index: 1001
+				color: #fff
+		.logo
 			margin-top: 0
-			padding-top: 0
-			.header__line
-				box-shadow: 0 0 15.7px 2.3px rgba(0, 0, 0, 0.46)
-			.nav
-				line-height: 48px
-				transition: all 0.2s
-			.logo
-				margin-top: 0
-				transition: all 0.2s
-				&__img
-					width: 66px
-					transition: all 0.2s
-	&__line
-		color: #fff
-		background-color: #5a5a5c
+		.logo__img
+			padding-top: 3px
+			width: 46px
+			background-color: #fff
 .nav
 	font-size: 13px
 	line-height: 30px
 	cursor: default
 	transition: all 0.2s
+	+r(819)
+		position: fixed
+		top: 50px
+		right: -200px
+		width: auto
+		background-color: #5a5a5c
+		z-index: 1002
+		transition: all 0.5s
+		&.is-active
+			right: 0
+			box-shadow: 0 0 5.7px 2.3px rgba(0, 0, 0, 0.46)
+			transition: all 0.5s
 	&__link
 		position: relative
 		z-index: 1
@@ -168,6 +223,10 @@ body
 		padding: 0 25px 2px
 		&:hover
 			color: $orange
+		+r(819)
+			display: block
+			padding-left: 30px
+			padding-right: 60px
 .logo
 	float: left
 	margin-top: -28px
@@ -178,6 +237,65 @@ body
 	&__img
 		width: 112px
 		transition: all 0.2s
+/* navigation */
+#menu_toggle
+	display: none
+	float: right
+	position: relative
+	overflow: hidden
+	margin-top: 10px
+	margin-left: 25px
+	margin-bottom: 10px
+	width: 24px
+	height: 24px
+	font-size: 0
+	text-indent: -9999px
+	appearance: none
+	background-color: transparent
+	cursor: pointer
+	transition: background 0.3s
+	transition: margin 0.2s
+	+r(819)
+		display: block
+	+r(380)
+		margin-left: 5px
+	span
+		display: block
+		position: absolute
+		top: 50%
+		left: 0
+		right: 0
+		height: 2px
+		background: white
+		transition: background 0s 0.3s
+		&:before, &:after
+			position: absolute
+			display: block
+			left: 0
+			width: 100%
+			height: 2px
+			background-color: #fff
+			content: ""
+			transition-duration: 0.3s, 0.3s
+			transition-delay: 0.3s, 0s
+		&:before
+			top: -7px
+			transition-property: top, transform
+		&:after
+			bottom: -7px
+			transition-property: bottom, transform
+	&.is-active
+		background-color: transparent
+		span
+			background: none
+			&:before
+				top: 0
+				transform: rotate(45deg)
+			&:after
+				bottom: 0
+				transform: rotate(-45deg)
+			&:before, &:after
+				transition-delay: 0s, 0.3s
 
 /* ==========================================================================
    Footer
@@ -215,10 +333,17 @@ body
 	background-size: cover
 	&__title
 		margin-left: -90px
+		+r(767)
+			margin-left: 0
+		+r(479)
+			margin-bottom: 50px
 		+sans-b
 		font-size: 50px
 		line-height: 57px
 		text-transform: uppercase
+		+r(479)
+			font-size: 40px
+			line-height: 46px
 	&__word
 		display: inline-block
 		margin-right: -0.26em
@@ -232,6 +357,10 @@ body
 		left: -10px
 		padding: 0 12px
 		background-color: #00c4d0
+		+r(767)
+			left: 0
+			margin-right: 0
+			padding: 0 20px
 	&__desc
 		display: inline-block
 		padding: 0 7px
@@ -243,11 +372,22 @@ body
 			margin-left: -200px
 			line-height: 20px
 			background-color: #5b5b5d
+			+r(767)
+				margin-left: 0
+			+r(479)
+				display: inline
+				margin-top: 0
+				box-shadow: -7px 0 0 #5b5b5d, 7px 0 0 #5b5b5d
 		&_2
 			margin-left: 120px
 			font-size: 17px
 			text-transform: uppercase
 			background-color: #ff0105
+			+r(767)
+				margin-left: 0
+			+r(479)
+				display: inline
+				box-shadow: -7px 0 0 #ff0105, 7px 0 0 #ff0105
 .timer
 	float: left
 	padding: 0 7px 0 5px
@@ -255,9 +395,19 @@ body
 	min-width: 200px
 	color: #2b2b2b
 	background-color: #fff
+	+r(479)
+		float: none
+		display: inline-block
+		margin-right: -5px
+		vertical-align: middle
 	&-wrap
 		float: left
 		margin-top: 100px
+		+r(767)
+			float: none
+			display: inline-block
+		+r(479)
+			text-align: center
 	&__in
 		font-size: 36px
 		line-height: 1
@@ -283,11 +433,22 @@ body
 		font-size: 40px
 		line-height: 50px
 		background-color: #ff680d
+		+r(479)
+			float: none
+			display: inline-block
+			margin-right: -5px
+			vertical-align: middle
 	&__desc
 		height: 33px
 		font-size: 24px
 		line-height: 31px
 		background-color: $blue-l
+		+r(479)
+			position: relative
+			top: 3px
+			display: inline
+			line-height: 28px
+			box-shadow: -7px 0 0 $blue-l, 7px 0 0 $blue-l
 
 /*--------- Section Price ---------*/
 .price
@@ -296,22 +457,42 @@ body
 	color: #fff
 	line-height: 1.2
 	background-color: $blue-l
+	+r(1023)
+		text-align: center
 	.wrap
 		padding-left: 100px
 		padding-right: 100px
+		+r(1023)
+			padding-left: 20px
+			padding-right: 20px
 	&__title
 		margin-left: 20px
 		+sans
 		font-size: 30px
 		text-transform: uppercase
+		+r(1023)
+			margin-left: 0
+		+r(639)
+			font-size: 24px
+		+r(479)
+			font-size: 20px
 	&__subtitle
 		margin-left: 280px
 		font-size: 30px
 		text-transform: uppercase
+		+r(1023)
+			margin-left: 0
+		+r(639)
+			font-size: 24px
+		+r(479)
+			font-size: 20px
 	&__desc
 		margin-top: 10px
 		margin-left: 280px
 		font-size: 14px
+		+r(1023)
+			text-align: left
+			margin-left: 0
 		&-title
 			+sans-b
 			font-size: 15px
@@ -322,6 +503,8 @@ body
 		margin-bottom: 30px
 		+sans-b
 		font-size: 15px
+		+r(1023)
+			text-align: left
 	.irs
 		font-size: 15px
 		&-line
@@ -390,8 +573,20 @@ body
 		display: inline-block
 		margin-right: -4px
 		text-align: left
+		+r(767)
+			margin-left: 10%
+			width: 40%
+			margin-bottom: 40px
+		+r(479)
+			margin-left: 5%
+			width: 45%
 		& + &
 			margin-left: 85px
+			+r(767)
+				margin-left: 10%
+			+r(479)
+				margin-left: 5%
+				width: 45%
 /* Base for label styling */
 [type="radio"]:not(:checked),
 [type="radio"]:checked
@@ -450,8 +645,8 @@ body
 .form-msg
 	margin-top: 60px
 	+pie-clearfix
-	.input
-		float: left
+	+r(767)
+		margin-top: 0
 	&__input
 		float: left
 		margin-right: 5%
@@ -464,6 +659,15 @@ body
 		background-color: transparent
 		border-bottom: 4px solid #fff
 		+placeholder-color(#fff)
+		+r(639)
+			float: none
+			display: block
+			margin-bottom: 40px
+			width: 50%
+			margin-left: auto
+			margin-right: auto
+		+r(479)
+			width: 80%
 	&__submit
 		height: 34px
 		width: 30%
@@ -473,6 +677,14 @@ body
 		border: 2px solid #fff
 		background-color: transparent
 		border-radius: 2px
+		+r(639)
+			float: none
+			display: block
+			width: 50%
+			margin-left: auto
+			margin-right: auto
+		+r(479)
+			width: 80%
 /*--------- Section Price ---------*/
 .gallery
 	overflow: hidden
@@ -481,6 +693,10 @@ body
 	padding-bottom: 40px
 	height: 484px
 	transition: all 0.5s
+	+r(767)
+		padding-top: 3px
+		padding-bottom: 10px
+		height: auto
 	&.slick-initialized
 		opacity: 1
 		transition: all 0.5s
@@ -489,8 +705,15 @@ body
 		margin-left: 2px
 		margin-right: 2px
 		cursor: pointer
+		+r(767)
+			margin-left: 0
+			margin-right: 0
+			text-align: center
 		img
 			height: 444px
+			+r(767)
+				width: 100%
+				height: auto
 		&:hover
 			.gallery__title
 				opacity: 1
@@ -500,9 +723,11 @@ body
 				opacity: 1
 				right: -40%
 				transition: all 0.3s
+				+r(1023)
+					right: 0
 	&__title
 		position: absolute
-		z-index: 1
+		z-index: 10
 		top: 0
 		right: 50px
 		padding-left: 10px
@@ -515,9 +740,13 @@ body
 		background-color: #fe8661
 		opacity: 0
 		transition: all 0.3s
+		+r(767)
+			opacity: 1
+			left: 0
+			right: auto
 	&__desc
 		position: absolute
-		z-index: 1
+		z-index: 20
 		top: 65px
 		right: -20%
 		font-size: 15px
@@ -525,6 +754,11 @@ body
 		line-height: 18px
 		opacity: 0
 		transition: all 0.3s
+		+r(767)
+			opacity: 1
+			left: 20px
+			right: auto
+			font-size: 13px
 		+pie-clearfix
 	&__text
 		float: left
@@ -535,7 +769,7 @@ body
 		padding: 0 5px 2px
 		color: #5b5b5b
 		background-color: #fff
-	.slick-
+	.slick-dots
 		margin-top: 5px
 		text-align: center
 		li
@@ -556,7 +790,7 @@ body
 				width: 10px
 				height: 10px
 				background-color: #282828
-		transition: background-color 0.3s
+				transition: background-color 0.3s
 /*--------------- Section Services ------------*/
 .services
 	padding-top: 10px
@@ -574,10 +808,15 @@ body
 		line-height: 65px
 		text-transform: uppercase
 		background-color: #fe8661
+		+r(1023)
+			margin-left: -20px
 	&__desc
 		margin-top: 7px
 		font-size: 20px
 		line-height: 1.2
+		+r(767)
+			float: left
+			width: 100%
 		& + &
 			margin-top: 0
 .attributes
@@ -585,6 +824,8 @@ body
 	padding-right: 50px
 	line-height: 1.2
 	text-align: center
+	+r(479)
+		padding: 0
 	+pie-clearfix
 	&__item
 		display: inline-block
@@ -592,26 +833,48 @@ body
 		margin-right: -4px
 		width: 50%
 		vertical-align: top
+		+r(767)
+			width: 100%
 		&_clock
 			.attributes__title
 				color: #ff740c
+			.attributes__desc-wrap
+				width: 57%
+				+r(479)
+					width: 80%
 			.attributes__desc
 				background-color: #ff740c
+				box-shadow: -5px 0 0 #ff740c, 5px 0 0 #ff740c
 		&_settings
 			.attributes__title
 				color: #06bfdb
+			.attributes__desc-wrap
+				width: 57%
+				+r(479)
+					width: 100%
 			.attributes__desc
 				background-color: #06bfdb
+				box-shadow: -5px 0 0 #06bfdb, 5px 0 0 #06bfdb
 		&_star
 			.attributes__title
 				color: #5d5d5f
+			.attributes__desc-wrap
+				width: 45%
+				+r(479)
+					width: 70%
 			.attributes__desc
 				background-color: #5d5d5f
+				box-shadow: -5px 0 0 #5d5d5f, 5px 0 0 #5d5d5f
 		&_pocket
 			.attributes__title
 				color: #febf00
+			.attributes__desc-wrap
+				width: 57%
+				+r(479)
+					width: 80%
 			.attributes__desc
 				background-color: #febf00
+				box-shadow: -5px 0 0 #febf00, 5px 0 0 #febf00
 	&__title
 		+sans-b
 		font-size: 30px
@@ -622,45 +885,60 @@ body
 		color: #000
 	&__desc
 		position: relative
-		display: inline-block
-		margin-top: 10px
-		padding-left: 5px
-		padding-right: 5px
+		display: inline
+		width: 50%
 		padding-bottom: 3px
 		font-size: 15px
 		color: #fff
 		background-color: $orange
-		&_2
-			margin-top: 0
-			position: relative
-			top: -2px
+		&-wrap
+			display: inline-block
+			margin-top: 10px
 /*--------------- Section Notes ------------*/
 .notes
 	font-size: 18px
 	color: #ffffff
 	border-top: 3px solid #f8845b
 	background-color: #00af9b
-	.wrap
+	&__head
+		padding-left: 20%
+		+r(767)
+			padding: 0 0 0 60px
+			text-align: left
+	&__title,
+	&__subtitle
+		display: inline
+		padding: 0 0 4px
+		+sans-b
+		font-size: 28px
+		text-transform: uppercase
+		+r(767)
+			font-size: 24px
+	&__title
+		margin-left: 60px
+		box-shadow: -10px 0 0 0 #fe5f1d, 10px 0 0 0 #fe5f1d
+		background-color: #fe5f1d
+		+r(767)
+			margin-left: 40px
+			box-shadow: -5px 0 0 0 #fe5f1d, 5px 0 0 0 #fe5f1d
+	&__subtitle
+		background-color: #f68654
+		box-shadow: -10px 0 0 0 #f68654, 10px 0 0 0 #f68654
+		+r(767)
+			box-shadow: -5px 0 0 0 #f68654, 5px 0 0 0 #f68654
+	&__desc
+		padding: 20px 0 0 16%
+		+r(767)
+			display: none
+	&__wrap
 		padding-top: 50px
 		padding-bottom: 50px
 		background: url('../img/notes-bg.png') 100px center no-repeat
-	&__title, &__subtitle
-		display: inline-block
-		padding-left: 10px
-		padding-right: 10px
-		+sans-b
-		font-size: 28px
-		line-height: 43px
-		text-transform: uppercase
-	&__title
-		margin-left: 250px
-		background-color: #fe5f1d
-	&__subtitle
-		margin-left: 190px
-		background-color: #f68654
-	&__desc
-		margin-top: 15px
-		margin-left: 330px
+		+r(1023)
+			background-position: 20px 50%
+		+r(767)
+			background-position: 10px 30%
+
 /*--------------- Section Quotes ------------*/
 .quotes
 	padding-top: 25px
@@ -678,10 +956,16 @@ body
 		line-height: 65px
 		text-transform: uppercase
 		background-color: #fe8661
+		+r(1023)
+			margin-left: -20px
 	&__desc
 		margin-top: 7px
 		font-size: 20px
 		line-height: 1.2
+		+r(800)
+			float: left
+			width: 100%
+			padding-left: 20px
 		& + &
 			margin-top: 0
 	&__icon
@@ -693,10 +977,13 @@ body
 		cursor: pointer
 		min-height: 84px
 		opacity: 0.8
-		transition: all 0.5s
+		+r(939)
+			text-align: center
 	.slick-list
 		padding: 0 !important
 		margin-left: 100px
+		+r(939)
+			margin-left: 0
 	&__img
 		display: inline-block
 		vertical-align: middle
@@ -706,7 +993,6 @@ body
 		width: 60px
 		height: 60px
 		border-radius: 100%
-		transition: all 0.5s
 		img
 			width: 100%
 			height: auto
@@ -716,24 +1002,35 @@ body
 		font-size: 11px
 		color: #2f2f2f
 		line-height: 17px
+		+r(939)
+			display: none
 	.slick-active
 		.slider-nav__img
 			margin-left: 50px
+			+r(939)
+				margin-left: 0
+				margin-right: 0
 	.slick-current
 		margin-top: 0
 		text-align: center
 		opacity: 1
-		transition: all 0.5s
 		.slider-nav__img
 			margin-left: 0
 			width: 84px
 			height: 84px
-			transition: all 0.5s
 		.slider-nav__info
 			font-size: 16px
 			color: #fe8661
 			text-align: left
 			line-height: 24px
+			+r(939)
+				display: block
+				width: 200%
+				margin-left: -50%
+				+sans
+				margin-top: 10px
+				font-size: 18px
+				text-align: center
 .slider-for
 	margin-top: 25px
 	margin-bottom: 30px
@@ -745,15 +1042,34 @@ body
 /*--------------- Section Quotes ------------*/
 .map
 	&__title
+		padding-top: 18px
+		padding-bottom: 20px
 		font-size: 40px
 		color: #fff
-		line-height: 88px
+		line-height: 50px
 		text-align: center
 		text-transform: uppercase
 		background-color: #fe8661
 	.call
+		position: relative
 		padding-top: 20px
 		padding-bottom: 20px
+		+r(639)
+			padding-bottom: 60px
+			text-align: center
+		&__phone
+			+r(639)
+				float: none
+				display: inline-block
+				margin-left: 12px
+				margin-right: 12px
+		&-btn
+			+r(1023)
+				margin-right: 20px
+			+r(639)
+				position: absolute
+				bottom: 15px
+				margin-right: 0
 	&__foot
 		padding-top: 30px
 		padding-bottom: 25px
@@ -765,6 +1081,8 @@ body
 			color: #313131
 			line-height: 24px
 			text-transform: uppercase
+			+r(479)
+				line-height: 1.2
 .red-btn
 	display: inline-block
 	+sans-sb
@@ -777,6 +1095,13 @@ body
 	border: 1px solid #ff0105
 	background-color: #fff
 	border-radius: 2px
+	+r(479)
+		margin-left: 20px
+		margin-right: 20px
+		padding-top: 3px
+		padding-bottom: 3px
+		min-height: 25px
+		line-height: 1.15
 #map
 	width: 100%
 	height: 50vh

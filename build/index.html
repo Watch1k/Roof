@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Template</title>
+	<title>RUMR</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="format-detection" content="telephone=no">
 	<!-- theme color for android 5.0 -->
@@ -10,7 +10,6 @@
 	<!-- <meta name="viewport" content="width=1200"> -->
 	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/lib/ion.rangeSlider.css">
-	<!--<link rel="stylesheet" media="all" href="css/lib/ion.rangeSlider.skinHTML5.css">-->
 	<link rel="stylesheet" media="all" href="css/screen.css">
 	<!--[if IE]><script src="js/lib/html5shiv.js"></script><![endif]-->
 	<script src="http://maps.googleapis.com/maps/api/js"></script>
@@ -19,6 +18,8 @@
 			var mapProp = {
 				center:new google.maps.LatLng(51.508742,-0.120850),
 				zoom:15,
+				scrollwheel: false,
+				draggable: true,
 				mapTypeId:google.maps.MapTypeId.ROADMAP
 			};
 			var map=new google.maps.Map(document.getElementById("map"),mapProp);
@@ -48,12 +49,13 @@
 			<div class="header__line">
 				<div class="wrap row">
 					<a href="index.html" class="logo"><img class="logo__img" src="img/logo.png" alt="RUMR"></a>
+					<button id="menu_toggle"><span>toggle menu</span></button>
 					<nav class="nav">
-						<a class="nav__link" href="#">Калькулятор</a>
-						<a class="nav__link" href="#">Портфолио</a>
-						<a class="nav__link" href="#">Услуги</a>
-						<a class="nav__link" href="#">Наши клиенты</a>
-						<a class="nav__link" href="#">Контакты</a>
+						<a class="nav__link" href="#calc">Калькулятор</a>
+						<a class="nav__link" href="#portfolio">Портфолио</a>
+						<a class="nav__link" href="#services">Услуги</a>
+						<a class="nav__link" href="#clients">Наши клиенты</a>
+						<a class="nav__link" href="#contacts">Контакты</a>
 					</nav>
 				</div>
 			</div>
@@ -95,7 +97,7 @@
 	</section><!--end action-->
 
 	<!--begin price-->
-	<section class="price">
+	<section class="price" id="calc">
 		<div class="wrap">
 			<div class="price__title">Оставьте заявку и узнаете</div>
 			<div class="price__subtitle">Точную стоимость ремонта</div>
@@ -150,7 +152,7 @@
 	</section><!--end price-->
 
 	<!--begin gallery-->
-	<section class="gallery">
+	<section class="gallery" id="portfolio">
 		<div class="gallery__item">
 			<img src="img/content/gallery-img.jpg" alt="gallery" class="gallery__img">
 			<div class="gallery__title">Портфолио</div>
@@ -194,7 +196,7 @@
 	</section><!--end gallery-->
 
 	<!--begin services-->
-	<section class="services wrap">
+	<section class="services wrap" id="services">
 		<div class="services__title">
 			<div class="services__block">Услуги</div>
 			<div class="services__desc">от разработки проекта</div>
@@ -209,11 +211,8 @@
 				</div>
 				<div class="attributes__title">Наш опыт</div>
 				<div class="attributes__subtitle">качественное производства работ</div>
-				<div class="row">
-					<div class="attributes__desc">успешно действуем на рынке</div>
-				</div>
-				<div class="row">
-					<div class="attributes__desc attributes__desc_2">уже долгое время</div>
+				<div class="attributes__desc-wrap">
+					<div class="attributes__desc">успешно действуем на рынке уже долгое время</div>
 				</div>
 			</div>
 			<div class="attributes__item attributes__item_settings">
@@ -222,11 +221,8 @@
 				</div>
 				<div class="attributes__title">Наши методы</div>
 				<div class="attributes__subtitle">точны и современны</div>
-				<div class="row">
-					<div class="attributes__desc">используем новые материалы</div>
-				</div>
-				<div class="row">
-					<div class="attributes__desc attributes__desc_2">технологии, оборудование</div>
+				<div class="attributes__desc-wrap">
+					<div class="attributes__desc">используем новые материалы, технологии, оборудование</div>
 				</div>
 			</div>
 			<div class="attributes__item attributes__item_star">
@@ -235,11 +231,8 @@
 				</div>
 				<div class="attributes__title">Наши гарантии</div>
 				<div class="attributes__subtitle">«железные»</div>
-				<div class="row">
-					<div class="attributes__desc">предоставляем гарантии</div>
-				</div>
-				<div class="row">
-					<div class="attributes__desc attributes__desc_2">на 20 лет</div>
+				<div class="attributes__desc-wrap">
+					<div class="attributes__desc">предоставляем гарантии на 20 лет</div>
 				</div>
 			</div>
 			<div class="attributes__item attributes__item_pocket">
@@ -248,11 +241,8 @@
 				</div>
 				<div class="attributes__title">Наши цены</div>
 				<div class="attributes__subtitle">обоснованы </div>
-				<div class="row">
-					<div class="attributes__desc">строго соблюдаем</div>
-				</div>
-				<div class="row">
-					<div class="attributes__desc attributes__desc_2">утвержденную смету</div>
+				<div class="attributes__desc-wrap">
+					<div class="attributes__desc">строго соблюдаем утвержденную смету</div>
 				</div>
 			</div>
 		</div><!--end atrributes-->
@@ -260,21 +250,23 @@
 
 	<!--begin notes-->
 	<section class="notes">
-		<div class="wrap">
-			<div class="row">
-				<div class="notes__title">Самое главное</div>
-			</div>
-			<div class="row">
-				<div class="notes__subtitle">Мы никогда не изменяем букве договора</div>
-			</div>
-			<div class="row">
-				<div class="notes__desc">Прописанные в нем стоимость, материалы, сроки - это догма</div>
+		<div class="notes__wrap wrap">
+			<div class="notes__head">
+				<div class="notes__row">
+					<div class="notes__title">Самое главное</div>
+				</div>
+				<div class="notes__row">
+					<div class="notes__subtitle">Мы никогда не изменяем букве договора</div>
+				</div>
+				<div class="notes__row">
+					<div class="notes__desc">Прописанные в нем стоимость, материалы, сроки - это догма</div>
+				</div>
 			</div>
 		</div>
 	</section><!--end notes-->
 
 	<!--begin quotes-->
-	<section class="quotes wrap">
+	<section class="quotes wrap" id="clients">
 		<div class="quotes__title">
 			<div class="quotes__block">Наши клиенты</div>
 			<div class="quotes__desc">люди разных доходов, и все они неизменно</div>
@@ -349,7 +341,7 @@
 	</section><!--end quotes-->
 
 	<!--begin map-->
-	<section class="map">
+	<section class="map" id="contacts">
 		<div class="map__title">Делайте натяжные потолки с «RUMR»</div>
 
 		<!--begin call-->

@@ -33,7 +33,17 @@ head.ready(function(){
 			centerMode: true,
 			variableWidth: true,
 			arrows: false,
-			focusOnSelect: true
+			focusOnSelect: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						variableWidth: false,
+						centerMode: false,
+						adaptiveHeight: true
+					}
+				}
+			]
 		});
 	}());
 	
@@ -97,6 +107,26 @@ head.ready(function(){
 					}
 				});
 			});
+		});
+	}());
+
+	// nav Scroll
+	(function () {
+		$('.nav a').on('click', function (e) {
+			e.preventDefault();
+			var _this = $(this),
+					el = _this.attr('href').substr(1),
+					elScroll = $('#' + el).offset().top,
+					elOffset = $('.header__row').height();
+			$('html, body').animate({ scrollTop: elScroll - elOffset }, 'slow');
+		});
+	}());
+
+	// menu Toggle
+	(function () {
+		$('#menu_toggle').on('click', function () {
+			$(this).toggleClass('is-active');
+			$('.nav').toggleClass('is-active');
 		});
 	}());
 

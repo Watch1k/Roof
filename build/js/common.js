@@ -33,7 +33,17 @@ head.ready(function(){
 			centerMode: true,
 			variableWidth: true,
 			arrows: false,
-			focusOnSelect: true
+			focusOnSelect: true,
+			responsive: [
+				{
+					breakpoint: 767,
+					settings: {
+						variableWidth: false,
+						centerMode: false,
+						adaptiveHeight: true
+					}
+				}
+			]
 		});
 	}());
 	
@@ -80,21 +90,43 @@ head.ready(function(){
 
 	// Counter
 	(function(){
-		$(".timer__in").each(function(index){
-			var counter = $(this);
-			counter.countdown({
-				seconds:counter.data("seconds"),
-				callback:function(days,hours,minutes,seconds,total){
-					days = (days) ? ((days<10)?"0"+days:days)+":" : "00:";
-					hours = (hours) ? ((hours<10)?"0"+hours:hours)+":" : "00:";
-					minutes = (minutes) ? ((minutes<10)?"0"+minutes:minutes)+":" : "00:";
-					seconds = (seconds) ? ((seconds<10)?"0"+seconds:seconds) : "00";
-					counter.html(days+hours+minutes+seconds);
-				},
-				finished: function(){
-					// your code cere
-				}
+		$(window).load(function () {
+			$(".timer__in").each(function(index){
+				var counter = $(this);
+				counter.countdown({
+					seconds:counter.data("seconds"),
+					callback:function(days,hours,minutes,seconds,total){
+						days = (days) ? ((days<10)?"0"+days:days)+":" : "00:";
+						hours = (hours) ? ((hours<10)?"0"+hours:hours)+":" : "00:";
+						minutes = (minutes) ? ((minutes<10)?"0"+minutes:minutes)+":" : "00:";
+						seconds = (seconds) ? ((seconds<10)?"0"+seconds:seconds) : "00";
+						counter.html(days+hours+minutes+seconds);
+					},
+					finished: function(){
+						// your code cere
+					}
+				});
 			});
+		});
+	}());
+
+	// nav Scroll
+	(function () {
+		$('.nav a').on('click', function (e) {
+			e.preventDefault();
+			var _this = $(this),
+					el = _this.attr('href').substr(1),
+					elScroll = $('#' + el).offset().top,
+					elOffset = $('.header__row').height();
+			$('html, body').animate({ scrollTop: elScroll - elOffset }, 'slow');
+		});
+	}());
+
+	// menu Toggle
+	(function () {
+		$('#menu_toggle').on('click', function () {
+			$(this).toggleClass('is-active');
+			$('.nav').toggleClass('is-active');
 		});
 	}());
 
