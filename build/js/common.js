@@ -13,12 +13,23 @@ head.ready(function(){
 
 	// range slider
 	(function() {
+		var ratio = 1,
+				ratioValue = [1, 10, 100, 1000];
+		$('.type input').on('change', function () {
+			$('.type input[type="radio"]').each(function () {
+				if ($(this).is(':checked')) {
+					console.log('checked');
+					var ratioIndex = $(this).parent('.type__item').index();
+					ratio = ratioValue[ratioIndex];
+				}
+			});
+		});
 		$("#rangeSlider").ionRangeSlider({
 			min: 0,
 			max: 1000,
 			from: 35,
 			onChange: function (data) {
-				$('.range-slider__number').text(Math.floor(data.from * 1250 / 35));
+				$('.range-slider__number').text(Math.floor(data.from * ratio));
 			}
 		});
 	}());
