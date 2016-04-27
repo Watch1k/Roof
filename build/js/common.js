@@ -40,7 +40,7 @@ head.ready(function(){
 					settings: {
 						variableWidth: false,
 						centerMode: false,
-						adaptiveHeight: true
+						// adaptiveHeight: true
 					}
 				}
 			]
