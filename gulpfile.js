@@ -77,7 +77,7 @@ gulp.task('sass', function() {
 
     return sass('src/sass/*.sass', {
             sourcemap: true,
-            style: 'compact'
+            style: 'expanded'
         })
         .on('error', function(err) {
             console.error('Error', err.message);

@@ -135,7 +135,7 @@ head.ready(function(){
 				var counter = $(this),
 						// counterValue = counter.data('seconds'); // old counter
 						counterNow = new Date(),
-						counterDate = new Date(2016,4 - 1,28,18,50), // год, месяц (-1 маст хев), день, минута, секунда
+						counterDate = new Date(2016,5 - 1,28,18,50), // год, месяц (-1 маст хев), день, минута, секунда
 						counterValue = Math.round((counterDate - counterNow) / 1000);
 				counter.countdown({
 					seconds: counterValue,
